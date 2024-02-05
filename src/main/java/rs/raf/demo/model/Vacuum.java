@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -20,7 +21,6 @@ public class Vacuum {
     private String name;
 
     @Column
-    @Enumerated(EnumType.STRING)
     private Status status;
 
     @ManyToOne
@@ -29,15 +29,17 @@ public class Vacuum {
     @Column
     private boolean active;
 
+    @Column
+    private boolean isBlocked;
+
+    @Column
+    private int cycleNumber;
+
     @Version
     private int version;
 
     @Column
-    @JsonFormat(pattern = "dd.MM.yyyy HH:mm")
-    private Date dateFrom;
+    private LocalDate dateCreated;
 
-    @Column
-    @JsonFormat(pattern = "dd.MM.yyyy HH:mm")
-    private Date dateTo;
 
 }

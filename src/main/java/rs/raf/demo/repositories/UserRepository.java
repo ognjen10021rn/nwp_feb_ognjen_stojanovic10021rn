@@ -7,4 +7,5 @@ import rs.raf.demo.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     public User findByUsername(String username);
+    public User findUserByUsername(String username);
 }

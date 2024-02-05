@@ -3,9 +3,11 @@ package rs.raf.demo.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.Version;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+
 
 @Entity
 @Getter
@@ -47,7 +49,23 @@ public class User {
     private boolean can_add_vacuum;
 
     @Column
-    private boolean can_remove_vacuums;
+    private boolean can_stop_vacuum;
+
+    @Column
+    private boolean can_remove_vacuum;
+
+    @Column
+    private boolean can_read_users;
+
+    @Column
+    private boolean can_create_users;
+
+    @Column
+    private boolean can_update_users;
+
+    @Column
+    private boolean can_delete_users;
+
 
 
 }
